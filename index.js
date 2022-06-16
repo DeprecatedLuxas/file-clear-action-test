@@ -10,6 +10,8 @@ try {
 
   console.log(fs.readdirSync("./"));
 
+  
+
   const exists = fs.existsSync("./test.json");
 
   if (exists) {
