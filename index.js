@@ -8,7 +8,17 @@ try {
   const time = new Date().toTimeString();
   core.setOutput("time", time);
 
-  fs.writeFileSync("/test.json", JSON.stringify({ time}));
+
+  const exists = fs.existsSync("test.json");
+
+  if (exists) {
+    console.log("test.json exists");
+    const data = fs.readFileSync("test.json");
+    console.log(data.toString());
+    return;
+  } else {
+    fs.writeFileSync("/test.json", JSON.stringify({ time }));
+  }
 } catch (error) {
   core.setFailed(error.message);
 }
