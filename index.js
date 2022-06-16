@@ -10,7 +10,7 @@ try {
 
   console.log(fs.readdirSync("./"));
 
-  const exists = fs.existsSync("test.json");
+  const exists = fs.existsSync("./test.json");
 
   if (exists) {
     console.log("test.json exists");
@@ -18,7 +18,7 @@ try {
     // console.log(data.toString());
     return;
   } else {
-    fs.writeFileSync("/test.json", JSON.stringify({ time }));
+    fs.writeFileSync("./test.json", JSON.stringify({ time }));
   }
 } catch (error) {
   core.setFailed(error.message);
