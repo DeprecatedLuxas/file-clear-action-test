@@ -13,8 +13,8 @@ try {
 
   if (exists) {
     console.log("test.json exists");
-    const data = fs.readFileSync("test.json");
-    console.log(data.toString());
+    // const data = fs.readFileSync("test.json");
+    // console.log(data.toString());
     return;
   } else {
     fs.writeFileSync("/test.json", JSON.stringify({ time }));
