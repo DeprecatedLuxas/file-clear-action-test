@@ -8,6 +8,7 @@ try {
   const time = new Date().toTimeString();
   core.setOutput("time", time);
 
+  console.log(fs.readdirSync("./"));
 
   const exists = fs.existsSync("test.json");
 
